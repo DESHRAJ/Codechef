@@ -9,20 +9,20 @@ def primecheck(a):
 		i=2
 		flag=0
 		for i in range(2,int(math.sqrt(a))):
-			flag=0
 			if(a%i==0):
 				flag=1
 				break
-		if(flag==0):
-			return a
-		else:
+			i+=1
+		if(flag==1):
 			return 0
+		else:
+			return a
 
 
 t =raw_input()
 t = int(t)
 x = []
-while(t!=0):
+while(t):
 	a,b = raw_input().split(" ")
 	a = int(a)
 	b = int(b)
