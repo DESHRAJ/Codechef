@@ -26,8 +26,7 @@ while(t):
 	a,b = raw_input().split(" ")
 	a = int(a)
 	b = int(b)
-	if(b-a<=100000 and b>=1 and a>=1 and a<=b):
-		# p=a
+	if(b>=1 and a>=1 and a<=b):
 		for p in range(a,b+1):
 			if(primecheck(p)):
 				x.append(p)
