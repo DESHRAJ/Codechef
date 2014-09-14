@@ -1,14 +1,12 @@
-import math 
+import sys, math	
 
 def primecheck(a):
-	a = int(a)
-	if (a==1):
-		return 0
-	elif (a==2):
-		return a
+	from math import sqrt
+	if (a==2):
+		return 2
 	elif (a>2):
 		flag=0
-		for i in range(2,int(math.sqrt(a)+1)):
+		for i in range(2,int(sqrt(a)+1)):
 			if(a%i==0):
 				flag=1
 				break
@@ -17,23 +15,23 @@ def primecheck(a):
 			return 0
 		else:
 			return a
-
-
-t =raw_input()
-t = int(t)
-x = []
-while(t):
-	a,b = raw_input().split(" ")
-	a = int(a)
-	b = int(b)
-	if(b>=1 and a>=1 and a<=b):
-		for p in range(a,b+1):
-			if(primecheck(p)):
-				x.append(p)
-	x.append(" ")
-	t-=1
-for c in x:
-	if c==" ":
-		print "\n"
-	else:
+def main():
+	from sys import stdin,stdout
+	t =map(int,sys.stdin.readline().split())
+	t = t[0]
+	x = []
+	while(t):
+		a,b = map(int, sys.stdin.readline().split(' '))
+		# a = int(a)
+		b = int(b)
+		if(b>=1 and a>=1 and a<=b):
+			for p in range(a,b+1):
+				if(primecheck(p)):
+					x.append(p)
+		x.append("\n")
+		t-=1
+	for c in x:
 		print c
+
+if __name__ == "__main__":
+    main()
