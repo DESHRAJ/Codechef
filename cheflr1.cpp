@@ -14,7 +14,7 @@ void calc(char a )
 	}
 	else if(a=='r')
 	{
-		pos = 2*pos +1;
+		pos = (2*pos) +1;
 
 	}
 }
@@ -27,8 +27,8 @@ int main()
 	cin>>t;
 	le =t;
 	int x[t];
-	while(t--)
-	{	
+	while(t!=-1)
+	{	pos=1;
 		int val=0,level=0;
 		cin.getline(ch,100000);
 		for(i=0;i<strlen(ch);i++)
@@ -63,11 +63,11 @@ int main()
 			diff = pos - pow(2,level);
 			val = val + 2*diff;
 		}
-
 		x[j]=val;
 		j++;
+		t--;
 	}
-	for(j=0;j<le;j++)
+	for(j=1;j<=le;j++)
 	{
 		cout<<x[j]<<endl;
 	}
