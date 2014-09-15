@@ -1,7 +1,8 @@
-#include <math.h>
-#include <iostream.h>
+#include <cmath>
+#include <iostream>
 #include <string.h>
 #include <stdio.h>
+using namespace std;
 # define size 100000
 long int pos = 1;
 
