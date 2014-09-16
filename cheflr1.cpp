@@ -6,20 +6,6 @@ using namespace std;
 # define size 100000
 long int pos = 1;
 
-void calc(char a )
-{
-	if(a=='l')
-	{
-		pos = 2*pos;
-	}
-	else if(a=='r')
-	{
-		pos = (2*pos) +1;
-
-	}
-}
-
-
 int main()
 {
 	int t,i,j=0,le,diff,val;
@@ -33,7 +19,14 @@ int main()
 		cin.getline(ch,100000);
 		for(i=0;i<strlen(ch);i++)
 		{
-			calc(ch[i]);
+			if(ch[i]=='l')
+			{
+				pos = 2*pos;
+			}
+			else if(ch[i]=='r')
+			{
+				pos = (2*pos) +1;
+			}
 		}
 		for(i=0;;i++)
 		{
