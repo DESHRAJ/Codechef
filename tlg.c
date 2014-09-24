@@ -3,39 +3,38 @@
 int diff=0;
 int main()
 {
-	int n,a,b;
-	char w;
+	int n,a,b,p=0,q=0;
+	int w;
 	scanf("%d",&n);
 	while(n--)
 	{
 		scanf("%d %d",&a,&b);
 		// printf("%d\n",a-b );
+		a+=p;
+		b+=q;
 		if(a>b)
 		{
-			if(diff<=a-b)
+			if(diff<a-b)
 			{
 				diff= a-b;
-				w = 'a';
+				w = 1;
 			}
 		}
-		else
+		else if(b>a)
 		{
 
-			if(diff<=b-a)
+			if(diff<b-a)
 			{
 				diff = b-a;
-				w = 'b';
+				w = 2;
 			}
 		}
+		p=a;
+		q=b;
+
+
 	}
-	if(w=='a')
-	{
-		printf("1 %d",diff);
-	}
-	else if(w=='b')
-	{
-		printf("2 %d",diff);
+	printf("%d %d",w,diff);
 		
-	} 
 	return 0;
 }
