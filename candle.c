@@ -10,37 +10,17 @@ int main()
 		{
 			scanf("%d",&a[i]);
 		}
-		n=1;
-		x=n;
-		while(1)
-		{
-			for(i=0;i<=9;i++)
-			c[i]=a[i];
-				
-			for(; n != 0; n /= 10, len++);
-			for(i=0;i<=len-1;i++)
+		min=10;
+		for(i=1;i<n;i++)
+			if(a[i]<min)
 			{
-				r = x%10;
-				if(c[r]!=0)
-				{
-					c[r]=c[r]-1;
-				}
-				x=x/10;
+				min = a[i];
+				pos = i;
 			}
-			for(i=0;i<=9;i++)
-			{
-				if(c[i]<0)
-				{
-					printf("%d",x);
-					flag=1;
-					break;
-				}
-			}
-			if(flag==1)
-				break;
-			else
-				x++;
-		}
+		a[i]-=1;	
+		b[j]=min;
+		j++;
+
 	}
 	return 0;
 }
