@@ -1,0 +1,8 @@
+import sys 
+import math 
+s = sys.stdin.readline()
+r = sys.stdin.readline()
+if (s==s[::-1]):
+	print "S is a palendrome "
+if (r==r[::-1]):
+	print "R is also a a palendrome "
