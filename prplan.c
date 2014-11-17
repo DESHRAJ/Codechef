@@ -1,80 +1,52 @@
 #include<stdio.h>
 #include<string.h>
-int palendrome(char s[], int ptr)
+int pal(char a[],long int l)
 {
-	// printf("palendrome function");
-	int j=0,i;
-	char s1[1000];
-	char s2[1000];
-	for(i=0;i<strlen(s);i++)
-	{
-		if(j!=ptr)
-		{
-			s1[i] = s[j];
-		}
-		j++;
-	}
-	
-	// for(i=0;i<strlen(s1);i++)
-	// {
-		// printf("%c",s1[i]);
-	// 	// if(j!=ptr)
-	// 	// {
-	// 	// 	s1[i] = s[j];
-	// 	// }
-	// 	// j++;
-	// }
-			printf("%d",strlen(s1));
-	if(strlen(s1)%2==0)
-	{
-		j = strlen(s1)-1;
-			printf("%d",strlen(s1));
-		for(i=0;i<strlen(s1)/2;i++)
-		{
-			printf("%c",s1[j]);
-			if(s1[i]!=s1[j])
-			{
-				return 0;
-			}
-			j-=1;
-		}
+	long int i;
+  	for(i=0;i<l/2;i++)
+    	if(a[i]!=a[l-1-i])
+    {
 		return 1;
-	}
-	else
-	{
-		j = strlen(s1)-1;
-		for(i=0;i<=strlen(s1)/2;i++)
-		{
-			if(s1[i]!=s1[j])
-			{
-				return 0;
-			}
-			j-=1;
-		}
-		return 1;
-	}
+     }
+	return 0;  
 }
+
 int main()
 {
-	int t,flag,i;
-	char s[1000];
-	scanf("%d",&t);
-	while(t--)
-	{
+    int t,m;
+    long int len,k,i,j,q;
+    char s[100001],r[100001];
+    scanf("%d",&t);
+    while(t--)
+    {
 		scanf("%s",s);
-		flag=0;
-		for(i=0;i<strlen(s);i++)
+		len=strlen(s);
+		q=len;
+		k=0;
+		while(q--)
 		{
-			if(palendrome(s,i)==1)
+			j=0;
+			for(i=0;i<len;i++)
 			{
-				flag=1;
+				if(k!=i)
+				{                
+					r[j]=s[i];
+					j++;
+				}
+			}
+			m=pal(r,len-1);
+			k++;
+			if(m==0)
+			{
 				printf("YES\n");
 				break;
 			}
 
 		}
-		if(flag==0)
+		if(m==1)
+		{ 
 			printf("NO\n");
-	}
+		}
+    }
 	return 0;
-}
+}           

@@ -18,9 +18,11 @@ int main()
 			sum3 = 1;
 			scanf("%lld",&p);
 			for(j=1;j<p+1;j++)
+			{
 				sum2 = sum2*pow(j,j);
-			for(j=1;j<n-p+1;j++)
+			// for(j=1;j<n-p+1;j++)
 				sum3 = sum3*pow(j,j);
+			}
 			sum = (sum1/(sum2*sum3))%m;
 			printf("%lld\n",sum);
 		}
