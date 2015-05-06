@@ -1,6 +1,6 @@
 // #include<iostream>
 #include<stdio.h>
-#include<math.h>
+#include<math>
 // using namespace sstd;
 int prime(long long int n)
 {

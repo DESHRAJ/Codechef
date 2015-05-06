@@ -21,7 +21,7 @@ void SieveOfEratosthenes(int n)
     {
         bool arr[n];
         memset(arr, 0, sizeof(arr));
-        for (int i=m; i<=n; ++i)
+        for (int i=m; i<=n;i++)
         {
             if ( arr[i] == 0 )
             {
